@@ -8,7 +8,10 @@ module.exports = function(sequelize, Sequelize) {
                 is: /\b[a-z]/i
             }
         },
-        devoured: Sequelize.BOOLEAN
+        devoured: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: false
+        }
     });
     return Burger;
 };
