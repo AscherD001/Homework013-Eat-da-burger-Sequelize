@@ -1,0 +1,35 @@
+<h1>Eat-da-burger!</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="container col-sm-6 burgers">
+        {{#each burgers}}
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            {{#if devoured}}{{else}}<h2>{{this.id}}. {{this.burger_name}}
+            <button type="submit" class="btn btn-secondary devour" name="burger_name" value={{this.burger_name}}>Devour!</button><br></h2>{{/if}}
+          </form>
+        {{/each}}
+      </div>
+  
+      <div class="container col-sm-6 devoured">
+        <div name="id">
+          {{#each burgers}}
+            {{#if devoured}}<option value="{{this.id}}">{{this.id}}. {{this.burger_name}}{{/if}}</option>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+<form method="POST" action="/" class="button-size">
+  <input type="text" name="name"></input>
+  <button type="submit" class="btn btn-secondary submit">Add Burger!</button>
+</form>
+
+<div class="modal fade" id="modal">
+  <div class="modal-dialog">
+      <div id="modBod" class="modal-body"></div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/javascript/script.js"></script>

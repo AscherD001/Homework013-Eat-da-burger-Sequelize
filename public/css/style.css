@@ -1,0 +1,16 @@
+.button-size, h1 {
+    text-align: center; 
+}
+h1 {
+    margin: 25px;
+}
+.devoured {
+    margin-bottom: 25px;
+}
+.burgers {
+    text-align: right;
+}
+.modal-dialog {
+    top: 5%;
+    left: -5%;
+}
